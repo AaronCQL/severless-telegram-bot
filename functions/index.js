@@ -1,8 +1,7 @@
 const Telegraf = require('telegraf')
 const functions = require('firebase-functions')
 
-// API key is not needed
-const bot = new Telegraf()
+const bot = new Telegraf(functions.config().telegrambot.key)
 
 bot.start((ctx) => ctx.reply('Welcome!'))
 bot.help((ctx) => ctx.reply('Send me a sticker'))
